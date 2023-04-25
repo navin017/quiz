@@ -5,12 +5,15 @@
     background-color: rgb(13, 94, 165);
     -webkit-text-fill-color: aliceblue;
 }
+.header{
+    text-align: center;
+}
 .start-button   {
 
     margin-top: 10% !important;
-    margin: auto !important;
-    padding: 4% 12% 4% 12% !important;
-    /* border-radius: 10% !important; */
+    
+    margin-left: 38% !important;
+    
 }
 .cover{
     border: solid black;
@@ -21,3 +24,9 @@
     border-radius: 15%;
     
 }
+.answer-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
