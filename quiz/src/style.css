@@ -1,0 +1,23 @@
+
+.title{
+    margin-top: auto;
+    padding: 2%;
+    background-color: rgb(13, 94, 165);
+    -webkit-text-fill-color: aliceblue;
+}
+.start-button   {
+
+    margin-top: 10% !important;
+    margin: auto !important;
+    padding: 4% 12% 4% 12% !important;
+    /* border-radius: 10% !important; */
+}
+.cover{
+    border: solid black;
+    width: 25%;
+    padding: 7% 1% 7% 1%;
+    margin:auto;
+    margin-top: 8%;
+    border-radius: 15%;
+    
+}
