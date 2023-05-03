@@ -2,6 +2,7 @@ import './App.css';
 import React,{useState,Fragment} from 'react'
 import StarterPage from './StarterPage';
 import style from './style.css'
+import { Hidden } from '@mui/material';
 
 
 
@@ -64,11 +65,13 @@ const [currentQuestion, setCurrentQuestion] = useState(0)
   const [showScore, setShowScore] = useState(false)
   const [score, setScore] = useState(0)
   const[style,setStyle] = useState(false)
+  const style1 = {overFlow:Hidden}
   const handleAnswerButtonClick = (e) => {
     const nextQuetions = currentQuestion + 1;
     e.preventDefault();
     if (nextQuetions < query.length) {
       setCurrentQuestion(nextQuetions);
+      setStyle(false)
     }
     else {
       setShowScore(true)
@@ -176,19 +179,20 @@ const [currentQuestion, setCurrentQuestion] = useState(0)
              
             <div className="answer-section">
               
-              {query[currentQuestion].answerOption.map((answerOption) => (
+              {query[currentQuestion].answerOption.map((answerOption,options,index) => (
                 
-                <ul className='unList'   style={{
-                  backgroundColor: style==true ? 'salmon' : '',
+                <ul className='unList'  key={index} style={{
+                  backgroundColor: style === options ? 'grey' : '',...style1
                   
-                }}  onClick={changeStyle} >   
+                }}  onClick={()=>setStyle(options)}>  
+                 
                  
                  {/* {changeStyle} */}
                  {/* { scoreCard(answerOption.iscorrect)} */}
                             
                   <li className='list'  >
                   {answerOption.answer}
-                 
+                  {options}
                 </li>
                
                 </ul>
@@ -202,7 +206,7 @@ const [currentQuestion, setCurrentQuestion] = useState(0)
            
             (<button  className='start-button'  onClick={handleAnswerButtonClick}>Submit</button>)
             :
-            (<button  className='start-button'  onClick={handleAnswerButtonClick}>Next</button>)
+            (<button  className='start-button'  onClick={handleAnswerButtonClick} >Next</button>)
             }
             
             </>
